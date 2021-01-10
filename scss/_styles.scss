@@ -1,7 +1,5 @@
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
+body {
+  color: $color-base !important;
 }
 .navbar {
   padding-top: 0;
@@ -9,43 +7,42 @@
 }
 .header-wrapper {
   background: $bg-dark;
-  margin-bottom: 105px;
+  margin-bottom: 104px;
 }
 .header {
-  @media (min-width: 992px) {
-    height: 55px;
+  min-height: 55px;
+  @include media-breakpoint-up(lg) {
+    line-height: 0;
   }
-}
-.navbar-brand {
-  padding-top: 5px;
 }
 .navbar-nav {
   padding-top: 10px;
-  @media (min-width: 992px) {
+  @include media-breakpoint-up(lg) {
     width: 633px;
-    padding-top: 0;
   }
 }
 .nav-item {
   .nav-link {
     text-transform: uppercase;
-    color: $color-base !important;
+    color: $color-nav !important;
     font-size: $font-size-sm;
     line-height: 0.7;
+    font-weight: 600;
+    padding: 8px 10px !important;
     &:hover {
       color: $teal !important;
     }
-    @media (min-width: 992px) {
+    @include media-breakpoint-up(lg) {
       border: 2px solid transparent;
       &:hover {
-        border: 2px solid $color-base;
+        border: 2px solid $color-nav;
         border-radius: 3px;
-        color: $color-base !important;
+        color: $color-nav !important;
       }
     }
   }
   .active {
-    @media (min-width: 992px) {
+    @include media-breakpoint-up(lg) {
       color: $teal !important;
       border: 2px solid $teal;
       border-radius: 3px;
@@ -63,7 +60,64 @@
   }
 }
 .data {
+  overflow: hidden;
+  .columns {
+    margin: 0 30px;
+    @include media-breakpoint-between(sm, md) {
+      max-width: 76%;
+      margin: auto;
+    }
+    @include media-breakpoint-up(xxl) {
+      margin: 0 0 42px 0;
+    }
+  }
+  .block {
+    margin-bottom: 30px;
+    @include media-breakpoint-up(md) {
+      padding-right: 20px;
+    }
+    @include media-breakpoint-up(xxl) {
+      padding-right: 12px;
+    }
+  }
   h2 {
+    font-family: "Quattrocento Sans", sans-serif;
     text-transform: uppercase;
+    padding-left: 20px;
+    margin-bottom: 83px;
+    position: relative;
+    letter-spacing: -2.6px;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 35px;
+      left: -1px;
+      top: 0px;
+      background: #e1e6ea;
+    }
+  }
+  span {
+    background: url("../../images/sprite.png") no-repeat -8px -8px;
+    width: 48px;
+    height: 48px;
+    display: block;
+    margin: auto;
+    margin-bottom: 32px;
+  }
+  .pixel-perfect {
+    background: url("../../images/sprite.png") no-repeat -69px -8px;
+  }
+  .responsive {
+    background: url("../../images/sprite.png") no-repeat -135px -8px;
+  }
+  .support {
+    background: url("../../images/sprite.png") no-repeat -183px -8px;
+  }
+  h3 {
+    font-family: "Quattrocento Sans", sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    letter-spacing: -0.7px;
   }
 }
