@@ -16,7 +16,11 @@ body {
   }
 }
 .navbar-nav {
-  padding-top: 10px;
+  @include media-breakpoint-between(xs, lg) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 400px;
+  }
   @include media-breakpoint-up(lg) {
     width: 633px;
   }
@@ -25,7 +29,6 @@ body {
   .nav-link {
     text-transform: uppercase;
     color: $color-nav !important;
-    font-size: $font-size-sm;
     line-height: 0.7;
     font-weight: 600;
     padding: 8px 10px !important;
@@ -34,6 +37,7 @@ body {
     }
     @include media-breakpoint-up(lg) {
       border: 2px solid transparent;
+      font-size: $font-size-sm;
       &:hover {
         border: 2px solid $color-nav;
         border-radius: 3px;
